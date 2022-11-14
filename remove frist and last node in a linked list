@@ -1,0 +1,26 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+    
+    public static void main(String[] args)
+    {
+   LinkedList<String> list = new LinkedList<String>();
+  
+        // Using add() method to add elements in the list
+        list.add("Geeks");
+        list.add("for");
+        list.add("Geeks");
+        list.add("10");
+        list.add("20");
+        // Displaying the list
+        System.out.println("LinkedList:" + list);
+        // Remove the head using removeFirst() method
+        System.out.println("The first element is: " + list.removeFirst());
+        // Displaying the final list
+        System.out.println("Final LinkedList:" + list);
+        System.out.println("The first element is: " + list.removeLast());
+        System.out.println("Final LinkedList:" + list);
+}
+}
