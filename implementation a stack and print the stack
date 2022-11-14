@@ -1,0 +1,55 @@
+import java.util.*;
+import java.io.*;
+
+public class Main
+{
+    
+    public static void main(String[] args)
+    {
+        Stack<String> stack = new Stack<String>();
+ 
+        stack.push("A");    // Insert `A` into the stack
+        stack.push("B");    // Insert `B` into the stack
+        stack.push("C");    // Insert `C` into the stack
+        stack.push("D");    // Insert `D` into the stack
+        PrintStack(stack);
+        // prints the top of the stack (`D`)
+        System.out.println("The top element is " + stack.peek());
+ 
+        stack.pop();        // removing the top element (`D`)
+        stack.pop();        // removing the next top (`C)
+   System.out.println("The top element is " + stack.peek());
+        // returns the total number of elements present in the stack
+        System.out.println("The stack size is " + stack.size());
+ 
+        // check if the stack is empty
+        if (stack.empty()) {
+            System.out.println("The stack is empty");
+        }
+        else {
+            System.out.println("The stack is not empty");
+        }
+    }
+    static void PrintStack(Stack<String>stack)
+{
+	// If stack is empty then return
+	if (stack.isEmpty())
+		return;
+	
+	String x = stack.peek();
+
+	// Pop the top element of the stack
+	stack.pop();
+
+	// Recursively call the function PrintStack
+	PrintStack(stack);
+
+	// Print the stack element starting
+	// from the bottom
+	System.out.println(x + " ");
+
+	// Push the same element onto the stack
+	// to preserve the order
+	stack.push(x);
+}
+}
