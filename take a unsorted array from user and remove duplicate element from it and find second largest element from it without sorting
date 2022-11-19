@@ -1,0 +1,46 @@
+import java.io.*; // for handling input/output
+import java.util.*; // contains Collections framework
+
+// don't change the name of this class
+// you can add inner classes if needed
+public class Main {
+    public static void removeDups(int[] arr,int n) {
+        HashMap<Integer,Boolean> mp = new HashMap<>();
+        for (int i = 0; i < n; i++)
+        {
+            if (mp.get(arr[i]) == null)
+            System.out.println(arr[i] + " ");
+            
+            mp.put(arr[i], true);
+        }
+    }
+    public static int getSecondLargest(int[] a){  
+        int temp;  
+        int total = a.length;
+        for (int i = 0; i < total; i++)   
+        {  
+            for (int j = i + 1; j < total; j++)   
+            {  
+                if (a[i] > a[j])   
+                {  
+                    temp = a[i];  
+                    a[i] = a[j];  
+                    a[j] = temp;  
+                }  
+            }  
+        }  
+       return a[total-2];  
+    }
+    public static void main (String[] args) {
+                      // Your code here
+                       Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+		int arr[] = new int[n];
+		for(int i=0;i<n;i++){
+		    arr[i]=sc.nextInt();
+		}
+		String newline = System.getProperty("line.separator");  
+	    removeDups(arr,n);
+	    System.out.print(getSecondLargest(arr));
+    }
+}
